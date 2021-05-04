@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePEGAWAI extends Migration
+class CreateJawabanRating extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePEGAWAI extends Migration
      */
     public function up()
     {
-        Schema::create('pegawai', function (Blueprint $table) {
+        Schema::create('jawaban_rating', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreatePEGAWAI extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_p_e_g_a_w_a_i');
+        Schema::dropIfExists('jawaban_rating');
     }
 }

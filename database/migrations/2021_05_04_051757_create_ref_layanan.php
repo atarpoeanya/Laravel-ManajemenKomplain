@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUraianPekerjaanJabatan extends Migration
+class CreateRefLayanan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateUraianPekerjaanJabatan extends Migration
      */
     public function up()
     {
-        Schema::create('uraian_pekerjaan_jabatan', function (Blueprint $table) {
+        Schema::create('ref_layanan', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateUraianPekerjaanJabatan extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('uraian_pekerjaan_jabatan');
+        Schema::dropIfExists('ref_layanan');
     }
 }
