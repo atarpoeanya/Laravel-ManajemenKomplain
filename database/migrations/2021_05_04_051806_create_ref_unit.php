@@ -15,7 +15,12 @@ class CreateRefUnit extends Migration
     {
         Schema::create('ref_unit', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('level');
+            $table->boolean('is_active');
             $table->timestamps();
+            $table->foreignId('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
