@@ -15,7 +15,14 @@ class CreateKomplainKomentar extends Migration
     {
         Schema::create('komplain_komentar', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_komplain')->references('id')->on('komplain')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('id_user_from')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('id_user_to')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('status_komplain');
+            $table->string('tanggapan');
             $table->timestamps();
+            $table->foreignId('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
