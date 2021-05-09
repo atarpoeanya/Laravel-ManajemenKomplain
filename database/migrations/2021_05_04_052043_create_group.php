@@ -15,7 +15,9 @@ class CreateGroup extends Migration
     {
         Schema::create('group', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_kontak')->constrained('kontak')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
+            $table->foreignId('create_by')->references('username')->on('user')->onupdate('cascade')->onDelete('cascade');
         });
     }
 

@@ -15,7 +15,10 @@ class CreateBroadcast extends Migration
     {
         Schema::create('broadcast', function (Blueprint $table) {
             $table->id();
+            $table->string('no_hp');
+            $table->text('pesan');
             $table->timestamps();
+            $table->foreignId('create_by')->references('username')->on('user')->onupdate('cascade')->onDelete('cascade');
         });
     }
 

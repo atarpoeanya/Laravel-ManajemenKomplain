@@ -15,7 +15,10 @@ class CreateGroupMember extends Migration
     {
         Schema::create('group_member', function (Blueprint $table) {
             $table->id();
+            $table->string('id_group');
+            $table->foreignId('id_kontak')->constrained('kontak')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
+            $table->foreignId('create_by')->references('username')->on('user')->onupdate('cascade')->onDelete('cascade');
         });
     }
 
