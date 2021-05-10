@@ -15,7 +15,11 @@ class CreateRefLayanan extends Migration
     {
         Schema::create('ref_layanan', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nama');
+            $table->boolean('is_active');
+            $table->foreignId('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->timestamps()
         });
     }
 
