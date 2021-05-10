@@ -16,6 +16,10 @@ class CreateKontak extends Migration
         Schema::create('kontak', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('no_hp');
+            $table->string('nama');
+            $table->string('id_jenis_kontak');
+            $table->foreignId('create_by')->references('username')->on('user')->onupdate('cascade')->onDelete('cascade');
         });
     }
 

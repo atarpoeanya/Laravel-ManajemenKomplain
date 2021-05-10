@@ -19,8 +19,8 @@ class CreateLayananUnit extends Migration
             $table->foreignId('id_unit')->references('id')->on('unit')->onUpdate('cascade')->onDelete('cascade');
             $table->boolean('is_active');
             $table->timestamps();
-            $table->foreignId('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('created_by')->references('username')->on('user')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('updated_by')->references('username')->on('user')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

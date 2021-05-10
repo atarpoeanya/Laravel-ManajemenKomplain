@@ -15,7 +15,10 @@ class CreateRefJenisKontak extends Migration
     {
         Schema::create('ref_jenis_kontak', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
             $table->timestamps();
+            $table->foreignId('create_by')->references('username')->on('user')->onupdate('cascade')->onDelete('cascade');
+            
         });
     }
 
