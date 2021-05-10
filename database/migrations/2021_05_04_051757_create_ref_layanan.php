@@ -20,7 +20,7 @@ class CreateRefLayanan extends Migration
             $table->boolean('is_active');
             $table->foreignId('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->timestamps()
+            
         });
     }
 
