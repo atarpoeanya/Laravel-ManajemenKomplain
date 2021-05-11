@@ -19,7 +19,7 @@ class CreateKontak extends Migration
             $table->string('no_hp');
             $table->string('nama');
             $table->string('id_jenis_kontak');
-            $table->foreignId('create_by')->references('username')->on('user')->onupdate('cascade')->onDelete('cascade');
+            $table->foreignId('create_by')->references('id')->on('users')->onupdate('cascade')->onDelete('cascade');
         });
     }
 

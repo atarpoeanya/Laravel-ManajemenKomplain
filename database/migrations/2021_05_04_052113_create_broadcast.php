@@ -18,7 +18,7 @@ class CreateBroadcast extends Migration
             $table->string('no_hp');
             $table->text('pesan');
             $table->timestamps();
-            $table->foreignId('create_by')->references('username')->on('user')->onupdate('cascade')->onDelete('cascade');
+            $table->foreignId('create_by')->references('id')->on('users')->onupdate('cascade')->onDelete('cascade');
         });
     }
 

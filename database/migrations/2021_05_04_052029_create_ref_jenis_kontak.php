@@ -17,7 +17,7 @@ class CreateRefJenisKontak extends Migration
             $table->id();
             $table->string('nama');
             $table->timestamps();
-            $table->foreignId('create_by')->references('username')->on('user')->onupdate('cascade')->onDelete('cascade');
+            $table->foreignId('create_by')->references('id')->on('users')->onupdate('cascade')->onDelete('cascade');
             
         });
     }

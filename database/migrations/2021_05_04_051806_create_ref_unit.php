@@ -19,9 +19,9 @@ class CreateRefUnit extends Migration
             $table->integer('level');
             $table->boolean('is_active');
             $table->timestamps();
-            $table->foreignId('id_unit_parent')->references('id')->on('unit')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('created_by')->references('username')->on('user')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('updated_by')->references('username')->on('user')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('id_unit_parent');
+            $table->foreignId('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
