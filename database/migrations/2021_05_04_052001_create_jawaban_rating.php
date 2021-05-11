@@ -16,13 +16,18 @@ class CreateJawabanRating extends Migration
         Schema::create('jawaban_rating', function (Blueprint $table) {
             $table->id();
             $table->index(['id_pertanyaan', 'id_komplain']);
-            $table->foreignId('id_pertanyaan')->references('id')->on('pertanyaan_rating')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('id_komplain')->references('id')->on('komplain')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('id_pertanyaan');
+            $table->unsignedBigInteger('id_komplain');
             $table->text('jawaban');
             $table->boolean('is_active');
             $table->timestamps();
             $table->foreignId('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+        });
+
+        Schema::table('jawaban_rating', function($table) {
+            $table->foreign('id_pertanyaan')->references('id')->on('ref_pertanyaan_rating')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_komplain')->references('id')->on('complain')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

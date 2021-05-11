@@ -15,8 +15,8 @@ class CreateLayananUnit extends Migration
     {
         Schema::create('layanan_unit', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_layanan')->unsigned();
-            $table->integer('id_unit')->unsigned();
+            $table->unsignedBigInteger('id_layanan');
+            $table->unsignedBigInteger('id_unit');
             $table->boolean('is_active');
             $table->timestamps();
             $table->foreignId('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
@@ -24,8 +24,8 @@ class CreateLayananUnit extends Migration
         });
 
         Schema::table('layanan_unit', function($table) {
-            $table->foreignId('id_layanan')->references('id')->on('ref_layanan');
-            $table->foreignId('id_unit')->references('id')->on('ref_layanan');
+            $table->foreign('id_layanan')->references('id')->on('ref_layanan');
+            $table->foreign('id_unit')->references('id')->on('ref_layanan');
         });
     }
 
