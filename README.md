@@ -7,3 +7,7 @@
 - M0518057 Shafna Fitria Nur Azizah
 - M0519010 Aldo Tri Pangestu
 - M0519026 Bagus Yulfan Ardiyanto
+
+
+# Depedencies
+- Perlu NPM (https://nodejs.org/download/release/v13.14.0/) [Cari.msi]
