@@ -17,8 +17,8 @@ class CreateRefKategori extends Migration
             $table->id();
             $table->string('nama');
             $table->timestamps();
-            $table->foreignId('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('updated_by')->nullable()->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('updated_by')->nullable()->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

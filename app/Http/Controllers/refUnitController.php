@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\refUnit;
 
 class refUnitController extends Controller
 {
@@ -23,8 +25,9 @@ class refUnitController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('tables.createRefUnit');
+    {   
+        $refunit = refUnit::all();
+        return view('tables.createRefUnit', compact('refunit'));
     }
 
     /**
@@ -35,9 +38,9 @@ class refUnitController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['nama'=>'required', 'is_active'=>'required', 'created_by'=>'required']);
-        refLayanan::create($request->all());
-        return redirect('/test1')->with('status','Masuk jing');
+        $request->validate(['nama'=>'required', 'is_active'=>'required', 'created_by'=>'required' , 'level'=>'required', 'id_unit_parent']);
+        refUnit::create($request->all());
+        return redirect('/test2')->with('status','Masuk jing');
     }
 
     /**

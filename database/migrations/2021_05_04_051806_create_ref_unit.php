@@ -19,9 +19,13 @@ class CreateRefUnit extends Migration
             $table->integer('level');
             $table->boolean('is_active');
             $table->timestamps();
-            $table->string('id_unit_parent');
-            $table->foreignId('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('updated_by')->nullable()->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedBigInteger('id_unit_parent')->nullable();
+            $table->string('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('updated_by')->nullable()->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+        });
+
+        Schema::table('ref_unit', function($table) {
+            $table->foreign('id_unit_parent')->references('id')->on('ref_unit');
         });
     }
 

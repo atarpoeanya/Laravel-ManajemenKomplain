@@ -27,3 +27,6 @@ Route::get('/test1/create', 'App\Http\Controllers\refLayananController@create');
 Route::post('/test1', 'App\Http\Controllers\refLayananController@store');
 
 //ref_unit
+Route::get('/test2', 'App\Http\Controllers\refUnitController@index');
+Route::get('/test2/create', 'App\Http\Controllers\refUnitController@create');
+Route::post('/test2', 'App\Http\Controllers\refUnitController@store');

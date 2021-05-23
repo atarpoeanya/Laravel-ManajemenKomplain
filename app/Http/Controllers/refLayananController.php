@@ -40,8 +40,8 @@ class refLayananController extends Controller
     {
         //>:)
 
-        $request->validate(['nama'=>'required', 'is_active'=>'required', 'created_by'=>'required', 'level'=>'required', 'id_unit_parent'=>'required']);
-        refUnit::create($request->all());
+        $request->validate(['nama'=>'required', 'is_active'=>'required', 'created_by'=>'required']);
+        refLayanan::create($request->all());
         return redirect('/test1')->with('status','Masuk jing');
 
     }

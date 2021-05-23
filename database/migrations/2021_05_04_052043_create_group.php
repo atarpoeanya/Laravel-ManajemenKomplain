@@ -17,7 +17,8 @@ class CreateGroup extends Migration
             $table->id();
             $table->foreignId('id_kontak')->constrained('kontak')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
-            $table->foreignId('create_by')->references('id')->on('users')->onupdate('cascade')->onDelete('cascade');
+            $table->string('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            
         });
     }
 

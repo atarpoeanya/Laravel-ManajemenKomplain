@@ -21,8 +21,8 @@ class CreateJawabanRating extends Migration
             $table->text('jawaban');
             $table->boolean('is_active');
             $table->timestamps();
-            $table->foreignId('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('updated_by')->nullable()->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('updated_by')->nullable()->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
 
         Schema::table('jawaban_rating', function($table) {
