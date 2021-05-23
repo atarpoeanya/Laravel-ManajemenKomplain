@@ -19,7 +19,7 @@ class CreateRefLayanan extends Migration
             $table->string('nama');
             $table->boolean('is_active');
             $table->string('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('updated_by')->nullable()->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             
         });
     }

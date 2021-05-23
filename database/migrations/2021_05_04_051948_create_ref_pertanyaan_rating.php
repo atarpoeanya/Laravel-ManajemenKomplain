@@ -19,7 +19,7 @@ class CreateRefPertanyaanRating extends Migration
             $table->boolean('is_active');
             $table->timestamps();
             $table->foreignId('inserted_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('edited_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('edited_by')->nullable()->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

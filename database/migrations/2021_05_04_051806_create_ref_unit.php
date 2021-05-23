@@ -21,7 +21,7 @@ class CreateRefUnit extends Migration
             $table->timestamps();
             $table->string('id_unit_parent');
             $table->foreignId('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('updated_by')->nullable()->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

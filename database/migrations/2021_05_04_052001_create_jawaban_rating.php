@@ -22,7 +22,7 @@ class CreateJawabanRating extends Migration
             $table->boolean('is_active');
             $table->timestamps();
             $table->foreignId('created_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('updated_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('updated_by')->nullable()->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
 
         Schema::table('jawaban_rating', function($table) {

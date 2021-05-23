@@ -78,6 +78,12 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <!-- @if (session('status'))
+          <div class="alert alert-success">
+              {{ session('status') }}
+          </div>
+          @endif -->
     </div>
 </body>
 </html>
