@@ -40,10 +40,10 @@
                                 </div>
                             </li>
                             <li class="list-group-item">
-                            <h3><a href="http://">test</a></h3>
+                            <h3><a href="/test3">test</a></h3>
                                 <div class="container">
                                     <a href="http://">edit</a>
-                                    <a href="">insert</a>
+                                    <a href="/test3/create">insert</a>
                                 </div>
                             </li>
                             <li class="list-group-item">

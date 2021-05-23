@@ -21,6 +21,7 @@ Auth::routes();
 Route::get('dasboard', 'UserController@dashboard')->middleware('auth');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // ====== tables ======
+
 //ref_layanan
 Route::get('/test1', 'App\Http\Controllers\refLayananController@index');
 Route::get('/test1/create', 'App\Http\Controllers\refLayananController@create');
@@ -30,3 +31,8 @@ Route::post('/test1', 'App\Http\Controllers\refLayananController@store');
 Route::get('/test2', 'App\Http\Controllers\refUnitController@index');
 Route::get('/test2/create', 'App\Http\Controllers\refUnitController@create');
 Route::post('/test2', 'App\Http\Controllers\refUnitController@store');
+
+//layanan_unit
+Route::get('/test3', 'App\Http\Controllers\LayananUnitController@index');
+Route::get('/test3/create', 'App\Http\Controllers\LayananUnitController@create');
+Route::post('/test3', 'App\Http\Controllers\LayananUnitController@store');

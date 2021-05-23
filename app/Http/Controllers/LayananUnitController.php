@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Models\layananUnit;
 use App\Models\refUnit;
+use App\Models\refLayanan;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
-class refUnitController extends Controller
+class LayananUnitController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +16,11 @@ class refUnitController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        // $refunit = refUnit::leftjoin('ref_unit', function($join) {
-        //     $join->on('ref_unit.id', '=', 'ref_unit.id_unit_parent');
-        // });
+    {   
         $refunit = refUnit::all();
-        return view('tables.refUnit', compact('refunit'));
+        $reflayanan = refLayanan::all();
+        $layananunit = layananUnit::all();
+        return view('tables.layananUnit', compact('refunit', 'reflayanan', 'layananunit'));
     }
 
     /**
@@ -28,9 +29,10 @@ class refUnitController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
+    {
         $refunit = refUnit::all();
-        return view('tables.createRefUnit', compact('refunit'));
+        $reflayanan = refLayanan::all();
+        return view('tables.createLayananUnit', compact('refunit', 'reflayanan'));
     }
 
     /**
@@ -41,18 +43,18 @@ class refUnitController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['nama'=>'required', 'is_active'=>'required', 'created_by'=>'required' , 'level'=>'required', 'id_unit_parent']);
-        refUnit::create($request->all());
-        return redirect('/test2')->with('status','Masuk jing');
+        $request->validate(['is_active'=>'required', 'created_by'=>'required', 'id_layanan'=>'required', 'id_unit'=>'required']);
+        layananUnit::create($request->all());
+        return redirect('/test3')->with('status','Masuk jing');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\layananUnit  $layananUnit
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(layananUnit $layananUnit)
     {
         //
     }
@@ -60,10 +62,10 @@ class refUnitController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\layananUnit  $layananUnit
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(layananUnit $layananUnit)
     {
         //
     }
@@ -72,10 +74,10 @@ class refUnitController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\layananUnit  $layananUnit
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, layananUnit $layananUnit)
     {
         //
     }
@@ -83,10 +85,10 @@ class refUnitController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\layananUnit  $layananUnit
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(layananUnit $layananUnit)
     {
         //
     }

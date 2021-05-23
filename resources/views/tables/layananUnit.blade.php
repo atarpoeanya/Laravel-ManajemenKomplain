@@ -6,27 +6,33 @@
         <thead class="table-dark">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Level</th>
+                <th scope="col">Layanan</th>
+                <th scope="col">Unit</th>
                 <th scope="col">Active</th>
-                <th scope="col">Managed by</th>
             </tr>
         </thead>
         <tbody>
-        @foreach($refunit as $value)
+        @foreach($layananunit as $value)
             <tr>
                 <th scope="row">{{$loop->iteration}}</th>
-                <td>{{$value->nama}}</td>
-                <td>{{$value->level}}</td>
+
+                @foreach($reflayanan as $value1)
+                @if($value1->id == $value->id)
+                <td>{{$value1->nama}}</td>
+                @endif
+                @endforeach
+
+                @foreach($refunit as $value2)
+                @if($value2->id == $value->id)
+                <td>{{$value2->nama}}</td>
+                @endif
+                @endforeach
+
                 @if ($value->is_active == 1)
                 <td>{{'true'}}</td>
                 @else
                 <td>{{'false'}}</td>
                 @endif
-
-                
-                <td>{{$value->id_unit_parent}}</td>
-                
             </tr>
         @endforeach
         </tbody>
