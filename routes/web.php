@@ -23,16 +23,16 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // ====== tables ======
 
 //ref_layanan
-Route::get('/test1', 'App\Http\Controllers\refLayananController@index');
-Route::get('/test1/create', 'App\Http\Controllers\refLayananController@create');
-Route::post('/test1', 'App\Http\Controllers\refLayananController@store');
+Route::get('/layanan', 'App\Http\Controllers\refLayananController@index');
+Route::get('/layanan/create', 'App\Http\Controllers\refLayananController@create');
+Route::post('/layanan', 'App\Http\Controllers\refLayananController@store');
 
 //ref_unit
-Route::get('/test2', 'App\Http\Controllers\refUnitController@index');
-Route::get('/test2/create', 'App\Http\Controllers\refUnitController@create');
-Route::post('/test2', 'App\Http\Controllers\refUnitController@store');
+Route::get('/unit', 'App\Http\Controllers\refUnitController@index');
+Route::get('/unit/create', 'App\Http\Controllers\refUnitController@create');
+Route::post('/unit', 'App\Http\Controllers\refUnitController@store');
 
 //layanan_unit
-Route::get('/test3', 'App\Http\Controllers\LayananUnitController@index');
-Route::get('/test3/create', 'App\Http\Controllers\LayananUnitController@create');
-Route::post('/test3', 'App\Http\Controllers\LayananUnitController@store');
+Route::get('/layananunit', 'App\Http\Controllers\LayananUnitController@index');
+Route::get('/layananunit/create', 'App\Http\Controllers\LayananUnitController@create');
+Route::post('/layananunit', 'App\Http\Controllers\LayananUnitController@store');
