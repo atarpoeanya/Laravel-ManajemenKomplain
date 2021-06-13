@@ -15,9 +15,6 @@ class Kategori extends Controller
      */
     public function index()
     {
-        $refunit = refUnit::all();
-        $reflayanan = refLayanan::all();
-        $layananunit = layananUnit::all();
         $kategori = kategori::all();
         return view('tables.kategori', compact('kategori','refunit', 'reflayanan', 'layananunit'));
     }
