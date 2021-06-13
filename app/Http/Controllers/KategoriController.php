@@ -24,7 +24,7 @@ class Kategori extends Controller
      */
     public function create()
     {
-        return view('tables.create.refkategori');
+        return view('tables.create.kategori');
     }
 
     /**
