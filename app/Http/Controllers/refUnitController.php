@@ -43,7 +43,7 @@ class refUnitController extends Controller
     {
         $request->validate(['nama'=>'required', 'is_active'=>'required', 'created_by'=>'required' , 'level'=>'required', 'id_unit_parent']);
         refUnit::create($request->all());
-        return redirect('/test2')->with('status','Masuk jing');
+        return redirect('/unit')->with('status','Masuk');
     }
 
     /**

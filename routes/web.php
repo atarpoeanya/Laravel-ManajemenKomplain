@@ -36,3 +36,8 @@ Route::post('/unit', 'App\Http\Controllers\refUnitController@store');
 Route::get('/layananunit', 'App\Http\Controllers\LayananUnitController@index');
 Route::get('/layananunit/create', 'App\Http\Controllers\LayananUnitController@create');
 Route::post('/layananunit', 'App\Http\Controllers\LayananUnitController@store');
+
+
+Route::get('/layananunit', 'App\Http\Controllers\LayananUnitController@index');
+Route::get('/layananunit/create', 'App\Http\Controllers\LayananUnitController@create');
+Route::post('/layananunit', 'App\Http\Controllers\LayananUnitController@store');

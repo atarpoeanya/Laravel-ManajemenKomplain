@@ -45,7 +45,7 @@ class LayananUnitController extends Controller
     {
         $request->validate(['is_active'=>'required', 'created_by'=>'required', 'id_layanan'=>'required', 'id_unit'=>'required']);
         layananUnit::create($request->all());
-        return redirect('/test3')->with('status','Masuk jing');
+        return redirect('/layananunit')->with('status','Masuk');
     }
 
     /**
