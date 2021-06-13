@@ -10,7 +10,7 @@
             </tr>
         </thead>
         <tbody>
-        @foreach($layananunit as $value)
+        @foreach($kategori as $value)
             <tr>
                 <th scope="row">{{$loop->iteration}}</th>
 
