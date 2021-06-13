@@ -37,7 +37,22 @@ Route::get('/layananunit', 'App\Http\Controllers\LayananUnitController@index');
 Route::get('/layananunit/create', 'App\Http\Controllers\LayananUnitController@create');
 Route::post('/layananunit', 'App\Http\Controllers\LayananUnitController@store');
 
+//kategori
+Route::get('/kategori', 'App\Http\Controllers\KategoriController@index');
+Route::get('/kategori/create', 'App\Http\Controllers\KategoriController@create');
+Route::post('/kategori', 'App\Http\Controllers\KategoriController@store');
 
-Route::get('/layananunit', 'App\Http\Controllers\LayananUnitController@index');
-Route::get('/layananunit/create', 'App\Http\Controllers\LayananUnitController@create');
-Route::post('/layananunit', 'App\Http\Controllers\LayananUnitController@store');
+//complain
+Route::get('/complain', 'App\Http\Controllers\ComplainController@index');
+Route::get('/complain/create', 'App\Http\Controllers\ComplainController@create');
+Route::post('/complain', 'App\Http\Controllers\ComplainController@store');
+
+//complain komentar
+Route::get('/complainkomentar', 'App\Http\Controllers\ComplainKomentarController@index');
+Route::get('/complainkomentar/create', 'App\Http\Controllers\ComplainKomentarController@create');
+Route::post('/complainkomentar', 'App\Http\Controllers\ComplainKomentarController@store');
+
+//pertanyaan rating
+Route::get('/kategori', 'App\Http\Controllers\PertanyaanRatingController@index');
+Route::get('/kategori/create', 'App\Http\Controllers\PertanyaanRatingController@create');
+Route::post('/kategori', 'App\Http\Controllers\PertanyaanRatingController@store');
