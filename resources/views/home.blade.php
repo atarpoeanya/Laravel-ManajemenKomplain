@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Welcome') }}</div>
 
                 <div class="py-4 card-body">
                     @if (session('status'))
@@ -20,7 +20,7 @@
             </div>
                 <div class="mt-2 card">
                     <div class="card-header">
-                    {{('Index')}}
+                    {{('Input Data')}}
                     </div>
 
                     <div class="card-body">
