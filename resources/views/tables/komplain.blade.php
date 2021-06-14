@@ -19,7 +19,11 @@
         @foreach($komplain as $value)
             <tr>
                 <th scope="row">{{$loop->iteration}}</th>
-                <td>{{$value->id_layanan}}</td>
+                @foreach($id_layanan as $value1)
+                @if($value1->id == $value->id)
+                <td>{{$value1->nama}}</td>
+                @endif
+                @endforeach
                 <td>{{$value->id_user}}</td>
                 <td>{{$value->id_kategori}}</td>
                 <td>{{$value->komplain}}</td>
