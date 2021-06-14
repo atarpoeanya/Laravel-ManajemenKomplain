@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\pertanyaanrating;
 
 class PertanyaanRatingController extends Controller
 {
@@ -13,7 +14,8 @@ class PertanyaanRatingController extends Controller
      */
     public function index()
     {
-        //
+        $pertanyaanrating = pertanyaanrating::all();
+        return view('tables.pertanyaanrating', compact('pertanyaanrating'));
     }
 
     /**
@@ -23,7 +25,8 @@ class PertanyaanRatingController extends Controller
      */
     public function create()
     {
-        //
+        $pertanyaanrating = pertanyaanrating::all();
+        return view('tables.createpertanyaanrating', compact('pertanyaanrating'));
     }
 
     /**
@@ -34,7 +37,9 @@ class PertanyaanRatingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(['pertanyaan'=>'required','is_active'=>'required']);
+        pertanyaanrating::create($request->all());
+        return redirect('/pertanyaanrating')->with('status', 'Masuk');
     }
 
     /**

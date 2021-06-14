@@ -69,10 +69,10 @@
                             </li>
                             
                             <li class="list-group-item">
-                            <h4><a href="/komplainkomentar">Pertanyaan Rating</a></h4>
+                            <h4><a href="/pertanyaanrating">Pertanyaan Rating</a></h4>
                                 <div class="container">
                                     <a href="http://">edit</a>
-                                    <a href="">insert</a>
+                                    <a href="pertanyaanrating/create">insert</a>
                                 </div>
                             </li>
                             <li class="list-group-item">
