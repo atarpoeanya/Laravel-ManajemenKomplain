@@ -9,19 +9,17 @@
     @foreach($reflayanan as $value)
         <option value="{{$value->id}}"> {{$value->nama}} </option>
     @endforeach
-
+    
     <label for="id_user"> Id User </label>
-    <select class="form-control @error('id_unit_parent') is-invalid @enderror" name="id_user" id="id_user" > 
-    @foreach($komplain as $value)
-        <option value="{{$value->id}}"> {{$value->nama}} </option>
-    @endforeach
+    <input type="text" class="form-control @error('id_user') is-invalid @enderror" 
+        id="id_user" placeholder="id user" name="id_user" value="{{ old('id_user') }}">
 
     <label for="id_kategori"> Id Kategori </label>
-    <select class="form-control @error('id_kategori') is-invalid @enderror" name="id_kategori" id="id_kategori" > 
-    @foreach($komplain as $value)
-        <option value="{{$value->id}}"> {{$value->nama}} </option>
-    @endforeach
-    <br>
+    <select class="form-control @error('id_unit_parent') is-invalid @enderror" name="id_kategori" id="id_kategori" > 
+        @foreach($kategori as $value)
+            <option value="{{$value->id}}"> {{$value->nama}} </option>
+        @endforeach
+    </select>
 
     <label for="komplain"> Komplain </label>
     <input type="text" class="form-control @error('komplain') is-invalid @enderror" 
