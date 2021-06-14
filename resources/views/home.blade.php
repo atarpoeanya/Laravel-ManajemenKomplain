@@ -61,10 +61,10 @@
                                 </div>
                             </li>
                             <li class="list-group-item">
-                            <h4><a href="/komplainkomentar">Komplain Komentar</a></h4>
+                            <h4><a href="/complainkomentar">Komplain Komentar</a></h4>
                                 <div class="container">
                                     <a href="http://">edit</a>
-                                    <a href="">insert</a>
+                                    <a href="complaincomentar">insert</a>
                                 </div>
                             </li>
                             

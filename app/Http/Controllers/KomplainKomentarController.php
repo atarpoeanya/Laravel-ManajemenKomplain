@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ComplainController extends Controller
+class KomplainKomentarController extends Controller
 {
     /**
      * Display a listing of the resource.

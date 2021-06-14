@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\layananUnit;
+use App\Models\refUnit;
+use App\Models\refLayanan;
+use App\Models\kategori;
+use App\Models\komplain;
 use Illuminate\Http\Request;
 
-class ComplainKomentarController extends Controller
+class KomplainController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +18,12 @@ class ComplainKomentarController extends Controller
      */
     public function index()
     {
-        //
+        $refunit = refUnit::all();
+        $reflayanan = refLayanan::all();
+        $layananunit = layananUnit::all();
+        $kategori = kategori::all();
+        $komplain = komplain::all();
+        return view('tables.komplain', compact('refunit', 'reflayanan', 'layananunit','kategori','komplain'));
     }
 
     /**
@@ -23,7 +33,12 @@ class ComplainKomentarController extends Controller
      */
     public function create()
     {
-        //
+        $refunit = refUnit::all();
+        $reflayanan = refLayanan::all();
+        $layananunit = layananUnit::all();
+        $kategori = kategori::all();
+        $komplain = komplain::all();
+        return view('tables.createkomplain', compact('refunit', 'reflayanan', 'layananunit','kategori','komplain'));
     }
 
     /**
@@ -34,7 +49,9 @@ class ComplainKomentarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(['id_layanan'=>'required', 'id_user'=>'required', 'id_kategori'=>'required', 'komplain'=>'required', 'path_bukti'=>'required', 'status_utama_komplain'=>'required']);
+        komplain::create($request->all());
+        return redirect('/komplain')->with('status','Masuk');
     }
 
     /**
