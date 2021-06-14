@@ -1,30 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="/unit" method="POST">
+<form action="/komplain" method="POST">
     @csrf
 
-    <label for="id_layanan"> Id Layanan </label>
-    <select class="form-control @error('id_layanan') is-invalid @enderror" name="id_layanan" id="id_layanan" > 
-        <option></option>
-    @foreach($komplain as $value)
-        <option value="{{$value->id}}"> {{$value->id_layanan}} </option>
+    <label for="id_layanan">Id Layanan</label>
+    <select class="form-control @error('id_unit_parent') is-invalid @enderror" name="id_layanan" id="id_layanan" > 
+    @foreach($reflayanan as $value)
+        <option value="{{$value->id}}"> {{$value->nama}} </option>
     @endforeach
 
     <label for="id_user"> Id User </label>
-    <select class="form-control @error('id_user') is-invalid @enderror" name="id_user" id="id_user" > 
-        <option></option>
+    <select class="form-control @error('id_unit_parent') is-invalid @enderror" name="id_user" id="id_user" > 
     @foreach($komplain as $value)
-        <option value="{{$value->id}}"> {{$value->id_user}} </option>
+        <option value="{{$value->id}}"> {{$value->nama}} </option>
     @endforeach
 
     <label for="id_kategori"> Id Kategori </label>
     <select class="form-control @error('id_kategori') is-invalid @enderror" name="id_kategori" id="id_kategori" > 
-        <option></option>
     @foreach($komplain as $value)
-        <option value="{{$value->id}}"> {{$value->id_kategori}} </option>
+        <option value="{{$value->id}}"> {{$value->nama}} </option>
     @endforeach
     <br>
+
     <label for="komplain"> Komplain </label>
     <input type="text" class="form-control @error('komplain') is-invalid @enderror" 
         id="komplain" placeholder="isi komplain anda" name="komplain" value="{{ old('komplain') }}">

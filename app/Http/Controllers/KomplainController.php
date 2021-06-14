@@ -23,7 +23,7 @@ class KomplainController extends Controller
         $layananunit = layananUnit::all();
         $kategori = kategori::all();
         $komplain = komplain::all();
-        return view('tables.komplain', compact('komplain'));
+        return view('tables.komplain', compact('refunit', 'reflayanan', 'layananunit','kategori','komplain'));
     }
 
     /**
@@ -38,7 +38,7 @@ class KomplainController extends Controller
         $layananunit = layananUnit::all();
         $kategori = kategori::all();
         $komplain = komplain::all();
-        return view('tables.createkomplain', compact('komplain'));
+        return view('tables.createkomplain', compact('refunit', 'reflayanan', 'layananunit','kategori','komplain'));
     }
 
     /**
