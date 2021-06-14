@@ -14,20 +14,17 @@
             <tr>
                 <th scope="row">{{$loop->iteration}}</th>
 
-                @foreach($kategori as $value1)
-                @if($value1->id == $value->id)
-                <td>{{$value1->nama}}</td>
-                @endif
-                @endforeach
 
-                @foreach($kategori as $value2)
-                @if($value2->id == $value->id)
-                <td>{{$value2->nama}}</td>
-                @endif
-                @endforeach
+
+     <td>{{$value->nama}}</td>
+
+
+
             </tr>
         @endforeach
         </tbody>
     </table>
 </div>
+
 @endsection
+
