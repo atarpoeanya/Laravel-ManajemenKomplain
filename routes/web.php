@@ -42,14 +42,17 @@ Route::get('/kategori', 'App\Http\Controllers\KategoriController@index');
 Route::get('/kategori/create', 'App\Http\Controllers\KategoriController@create');
 Route::post('/kategori', 'App\Http\Controllers\KategoriController@store');
 
-//complain
-Route::get('/complain', 'App\Http\Controllers\ComplainController@index');
-Route::get('/complain/create', 'App\Http\Controllers\ComplainController@create');
-Route::post('/complain', 'App\Http\Controllers\ComplainController@store');
+//komplain
+Route::get('/komplain', 'App\Http\Controllers\KomplainController@index');
+Route::get('/komplain/create', 'App\Http\Controllers\KomplainController@create');
+Route::post('/komplain', 'App\Http\Controllers\KomplainController@store');
 
-//complain komentar
-Route::get('/complainkomentar', 'App\Http\Controllers\ComplainKomentarController@index');
-Route::get('/complainkomentar/create', 'App\Http\Controllers\ComplainKomentarController@create');
-Route::post('/complainkomentar', 'App\Http\Controllers\ComplainKomentarController@store');
+//komplain komentar
+Route::get('/komplainkomentar', 'App\Http\Controllers\KomplainKomentarController@index');
+Route::get('/komplainkomentar/create', 'App\Http\Controllers\KomplainKomentarController@create');
+Route::post('/komplainkomentar', 'App\Http\Controllers\KomplainKomentarController@store');
 
 //pertanyaan rating
+Route::get('/pertanyaanrating', 'App\Http\Controllers\PertanyaanRatingController@index');
+Route::get('/pertanyaanrating/create', 'App\Http\Controllers\PertanyaanRatingController@create');
+Route::post('/pertanyaanrating', 'App\Http\Controllers\PertanyaanRatingController@store');
