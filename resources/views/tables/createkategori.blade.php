@@ -4,11 +4,9 @@
 <form action="/kategori" method="POST">
     @csrf
 
-    <label for="id_unit">Nama</label>
-    <select class="form-control @error('id_unit_parent') is-invalid @enderror" name="id_unit" id="id_unit" > 
-    @foreach($refunit as $value)
-        <option value="{{$value->id}}"> {{$value->nama}} </option>
-    @endforeach
+    <label for="nama">Nama</label>
+    <input type="text" class="form-control @error('nama') is-invalid @enderror" 
+        id="nama" placeholder="Masukkan nama" name="nama" value="{{ old('nama') }}">
         
     </select>
         

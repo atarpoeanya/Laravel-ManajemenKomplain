@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\kategori;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Kategori;
+use Illuminate\Http\Request;
 
-class Kategori extends Controller
+class KategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class Kategori extends Controller
     public function index()
     {
         $kategori = kategori::all();
-        return view('tables.kategori', compact('kategori','refunit', 'reflayanan', 'layananunit'));
+        return view('tables.kategori', compact('kategori'));
     }
 
     /**
@@ -26,10 +26,8 @@ class Kategori extends Controller
      */
     public function create()
     {
-        $refunit = refUnit::all();
-        $reflayanan = refLayanan::all();
-        $layananunit = layananUnit::all();
-        return view('tables.createkategori');
+        $kategori = kategori::all();
+        return view('tables.createkategori', compact('kategori'));
     }
 
     /**
@@ -40,7 +38,7 @@ class Kategori extends Controller
      */
     public function store(Request $request)
     {
-        $requst->validate(['nama'=>'required',])
+        $request->validate(['nama'=>'required', 'created_by'=>'required' ]);
         kategori::create($request->all());
         return redirect('/kategori')->with('status','Masuk');
     }

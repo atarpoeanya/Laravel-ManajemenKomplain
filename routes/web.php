@@ -53,6 +53,3 @@ Route::get('/complainkomentar/create', 'App\Http\Controllers\ComplainKomentarCon
 Route::post('/complainkomentar', 'App\Http\Controllers\ComplainKomentarController@store');
 
 //pertanyaan rating
-Route::get('/kategori', 'App\Http\Controllers\PertanyaanRatingController@index');
-Route::get('/kategori/create', 'App\Http\Controllers\PertanyaanRatingController@create');
-Route::post('/kategori', 'App\Http\Controllers\PertanyaanRatingController@store');
