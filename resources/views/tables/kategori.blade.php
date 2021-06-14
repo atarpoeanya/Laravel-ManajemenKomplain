@@ -13,7 +13,11 @@
         @foreach($kategori as $value)
             <tr>
                 <th scope="row">{{$loop->iteration}}</th>
-                <td>{{$value->nama}}</td>
+
+
+
+     <td>{{$value->nama}}</td>
+
 
 
             </tr>
@@ -21,4 +25,6 @@
         </tbody>
     </table>
 </div>
+
 @endsection
+

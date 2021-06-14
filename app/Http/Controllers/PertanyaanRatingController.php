@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Models\refUnit;
 
-class refUnitController extends Controller
+class PertanyaanRatingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +13,7 @@ class refUnitController extends Controller
      */
     public function index()
     {
-        // $refunit = refUnit::leftjoin('ref_unit', function($join) {
-        //     $join->on('ref_unit.id', '=', 'ref_unit.id_unit_parent');
-        // });
-        $refunit = refUnit::all();
-        return view('tables.refUnit', compact('refunit'));
+        //
     }
 
     /**
@@ -28,9 +22,8 @@ class refUnitController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
-        $refunit = refUnit::all();
-        return view('tables.createRefUnit', compact('refunit'));
+    {
+        //
     }
 
     /**
@@ -41,9 +34,7 @@ class refUnitController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['nama'=>'required', 'is_active'=>'required', 'created_by'=>'required' , 'level'=>'required', 'id_unit_parent']);
-        refUnit::create($request->all());
-        return redirect('/unit')->with('status','Masuk');
+        //
     }
 
     /**

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="/test1" method="POST">
+<form action="/layanan" method="POST">
     @csrf
 
     <label for="nama">Nama</label>

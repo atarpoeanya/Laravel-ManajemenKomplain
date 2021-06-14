@@ -50,14 +50,14 @@
                             <h4><a href="/kategori">Kategori</a></h4>
                             <div class="container">
                                     <a href="http://">edit</a>
-                                    <a href="">insert</a>
+                                    <a href="/kategori/create">insert</a>
                                 </div>
                             </li>
                             <li class="list-group-item">
                             <h4><a href="/komplain">Komplain</a></h4>
                             <div class="container">
                                     <a href="http://">edit</a>
-                                    <a href="">insert</a>
+                                    <a href="komplain/create">insert</a>
                                 </div>
                             </li>
                             <li class="list-group-item">

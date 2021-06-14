@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\layananUnit;
-use App\Models\refUnit;
-use App\Models\refLayanan;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Kategori;
 
-class LayananUnitController extends Controller
+class Kategori extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +14,9 @@ class LayananUnitController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        $refunit = refUnit::all();
-        $reflayanan = refLayanan::all();
-        $layananunit = layananUnit::all();
-        return view('tables.layananUnit', compact('refunit', 'reflayanan', 'layananunit'));
+    {
+        $kategori = kategori::all();
+        return view('tables.kategori', compact('kategori','refunit', 'reflayanan', 'layananunit'));
     }
 
     /**
@@ -32,7 +28,8 @@ class LayananUnitController extends Controller
     {
         $refunit = refUnit::all();
         $reflayanan = refLayanan::all();
-        return view('tables.createLayananUnit', compact('refunit', 'reflayanan'));
+        $layananunit = layananUnit::all();
+        return view('tables.createkategori');
     }
 
     /**
@@ -43,18 +40,18 @@ class LayananUnitController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['is_active'=>'required', 'created_by'=>'required', 'id_layanan'=>'required', 'id_unit'=>'required']);
-        layananUnit::create($request->all());
-        return redirect('/layananunit')->with('status','Masuk');
+        $requst->validate(['nama'=>'required',])
+        kategori::create($request->all());
+        return redirect('/kategori')->with('status','Masuk');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\layananUnit  $layananUnit
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(layananUnit $layananUnit)
+    public function show($id)
     {
         //
     }
@@ -62,10 +59,10 @@ class LayananUnitController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\layananUnit  $layananUnit
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(layananUnit $layananUnit)
+    public function edit($id)
     {
         //
     }
@@ -74,10 +71,10 @@ class LayananUnitController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\layananUnit  $layananUnit
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, layananUnit $layananUnit)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -85,10 +82,10 @@ class LayananUnitController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\layananUnit  $layananUnit
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(layananUnit $layananUnit)
+    public function destroy($id)
     {
         //
     }
