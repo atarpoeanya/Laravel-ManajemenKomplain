@@ -5,10 +5,12 @@
     @csrf
 
     <label for="id_layanan">Id Layanan</label>
-    <select class="form-control @error('id_unit_parent') is-invalid @enderror" name="id_layanan" id="id_layanan" > 
+    <select class="form-control @error('id_unit_parent') is-invalid @enderror" name="id_layanan" id="id_layanan"> 
     @foreach($reflayanan as $value)
         <option value="{{$value->id}}"> {{$value->nama}} </option>
     @endforeach
+    </select>
+    
     
     <label for="id_user"> Id User </label>
     <input type="text" class="form-control @error('id_user') is-invalid @enderror" 
