@@ -10,6 +10,6 @@ class komplain extends Model
    
 
         protected $table = 'complain';
-        protected $fillable = ['id_layanan'.'id_user','id_kategori','komplain','path_bukti','status_utama_komplain','created_by'];
+        protected $fillable = ['id_layanan','id_kategori','id_user','komplain','path_bukti','status_utama_komplain','created_by'];
 
 }
