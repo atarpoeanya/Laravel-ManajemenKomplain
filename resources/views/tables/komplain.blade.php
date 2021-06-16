@@ -29,7 +29,7 @@
                 <td>{{$value->komplain}}</td>
                 <td>{{$value->path_bukti}}</td>
                 <td>{{$value->status_utama_komplain}}</td>
-
+                
             </tr>
         @endforeach
         </tbody>
