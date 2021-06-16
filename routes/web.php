@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('admin', function () { return view('home'); })->middleware('checkRole:admin');
+Route::get('user', function () { return view('user'); })->middleware(['checkRole:user']);
 
 Auth::routes();
 Route::get('dasboard', 'UserController@dashboard')->middleware('auth');
@@ -56,3 +58,5 @@ Route::post('/komplainkomentar', 'App\Http\Controllers\KomplainKomentarControlle
 Route::get('/pertanyaanrating', 'App\Http\Controllers\PertanyaanRatingController@index');
 Route::get('/pertanyaanrating/create', 'App\Http\Controllers\PertanyaanRatingController@create');
 Route::post('/pertanyaanrating', 'App\Http\Controllers\PertanyaanRatingController@store');
+
+
