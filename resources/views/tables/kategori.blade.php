@@ -16,6 +16,7 @@
                 <td>{{$value->nama}}</td>
             </tr>
         @endforeach
+        <a href="{{ url('/home') }}" class="btn bg-success my-3">back</a>
         </tbody>
     </table>
 </div>

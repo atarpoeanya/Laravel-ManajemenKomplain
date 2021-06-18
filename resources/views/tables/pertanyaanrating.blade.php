@@ -24,5 +24,6 @@
         @endforeach
         </tbody>
     </table>
+    <a href="{{ url('/home') }}" class="btn bg-success my-3">Back</a>
 </div>
 @endsection

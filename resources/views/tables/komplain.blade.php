@@ -28,11 +28,11 @@
                 <td>{{$value->id_kategori}}</td>
                 <td>{{$value->komplain}}</td>
                 <td>{{$value->path_bukti}}</td>
-                <td>{{$value->status_utama_komplain}}</td>
-                
+                <td>{{$value->status_utama_komplain}}</td>                
             </tr>
         @endforeach
         </tbody>
     </table>
+    <a href="{{ url('/home') }}" class="btn bg-success my-3">back</a>
 </div>
 @endsection
