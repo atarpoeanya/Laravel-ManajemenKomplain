@@ -15,7 +15,7 @@ class CheckRole
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
-    
+    {
     //jika akun yang login sesuai dengan role 
     //maka silahkan akses
     //jika tidak sesuai akan diarahkan ke home
@@ -30,4 +30,5 @@ class CheckRole
     }
 
     return redirect('/');
+    }
 }

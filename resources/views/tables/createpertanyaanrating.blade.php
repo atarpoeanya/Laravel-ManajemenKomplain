@@ -31,7 +31,7 @@
     @error('nama')
     <div class="invalid-feedback">{{ 'error' }}</div>
     @enderror
-    <button type="submit">submit</button>
+    <button type="submit" class="btn bg-primary my-3">submit</button>
 
 </form>
 

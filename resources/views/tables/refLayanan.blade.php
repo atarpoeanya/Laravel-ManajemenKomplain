@@ -8,6 +8,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Nama</th>
                 <th scope="col">Active</th>
+
             </tr>
         </thead>
         <tbody>
@@ -20,10 +21,10 @@
                 @else
                 <td>{{'false'}}</td>
                 @endif
-
             </tr>
         @endforeach
         </tbody>
     </table>
+    <a href="{{ url('/home') }}" class="btn bg-success my-3">Back</a>
 </div>
 @endsection
