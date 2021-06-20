@@ -42,5 +42,6 @@
         </tbody>
     </table>
     <a href="{{ url('/home') }}" class="btn bg-success my-3">Back</a>
+    <a href="/komplainkomentar/create" class="btn btn-secondary">Insert</a>
 </div>
 @endsection
