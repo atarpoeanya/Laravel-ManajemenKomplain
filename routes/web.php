@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('admin', function () { return view('home'); })->middleware('checkRole:admin');
+Route::get('admin', function () { return view('home'); })->middleware(['checkRole:admin']);
 Route::get('user', function () { return view('user'); })->middleware(['checkRole:user']);
 
 Auth::routes();

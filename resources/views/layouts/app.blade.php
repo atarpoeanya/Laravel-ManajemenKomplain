@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm ">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ config('Manajemen Komplain', 'Manajemen Komplain') }}
@@ -33,11 +33,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <a class="nav-link" href="{{ url('/user') }}">User</a>
+                        <a class="nav-link" href="{{ url('/komplain') }}">Admin</a>
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))

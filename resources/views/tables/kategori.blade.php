@@ -16,8 +16,10 @@
                 <td>{{$value->nama}}</td>
             </tr>
         @endforeach
-        <a href="{{ url('/home') }}" class="btn bg-success my-3">back</a>
         </tbody>
     </table>
+    <a href="{{ url('/home') }}" class="btn bg-success my-3">Back</a>
+    <a href="/kategori/create" class="btn btn-secondary">Insert</a>
+   
 </div>
 @endsection

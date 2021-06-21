@@ -25,5 +25,6 @@
         </tbody>
     </table>
     <a href="{{ url('/home') }}" class="btn bg-success my-3">Back</a>
+    <a href="/pertanyaanrating/create" class="btn btn-secondary">Insert</a>
 </div>
 @endsection
