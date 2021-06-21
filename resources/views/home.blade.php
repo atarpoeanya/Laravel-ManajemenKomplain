@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -16,6 +15,14 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+
+            </div>
+            <div>
+                    <a href="{{ url('permissions-all-users') }}"><button>Access All Users</button></a>
+                    
+
+
+                    
 
             </div>
                 <div class="mt-2 card">
@@ -131,3 +138,7 @@
     </div>
 </div>
 @endsection
+
+
+
+                    

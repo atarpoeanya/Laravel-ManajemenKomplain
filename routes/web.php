@@ -16,13 +16,27 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('admin', function () { return view('home'); })->middleware(['checkRole:admin']);
-Route::get('user', function () { return view('user'); })->middleware(['checkRole:user']);
 
 Auth::routes();
 Route::get('dasboard', 'UserController@dashboard')->middleware('auth');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', 'HomeController@index');
+
+
+
+
+Route::group(['middleware'=>'auth'], function () {
+	Route::get('permissions-all-users',['middleware'=>'check-permission:user','uses'=>'HomeController@allUsers']);
+	
+	Route::get('permissions-superadmin',['middleware'=>'check-permission:superadmin','uses'=>'HomeController@superadmin']);
+});
 // ====== tables ======
+
+Route::group(['middleware'=>'check-permission:admin'], function (){
+   
+    // Route::get('permissions-admin-superadmin',['middleware'=>'check-permission:admin','uses'=>'HomeController@admin']);
+    // Route::get('admin', function () { return view('home'); })->middleware(['checkRole:admin']);
+    // Route::get('user', function () { return view('user'); })->middleware(['checkRole:user']);
 
 //ref_layanan
 Route::get('/layanan', 'App\Http\Controllers\refLayananController@index');
@@ -45,7 +59,7 @@ Route::get('/kategori/create', 'App\Http\Controllers\KategoriController@create')
 Route::post('/kategori', 'App\Http\Controllers\KategoriController@store');
 
 //komplain
-Route::get('/komplain', 'App\Http\Controllers\KomplainController@index');
+Route::get('komplain', 'App\Http\Controllers\KomplainController@index');
 Route::get('/komplain/create', 'App\Http\Controllers\KomplainController@create');
 Route::post('/komplain', 'App\Http\Controllers\KomplainController@store');
 
@@ -58,5 +72,5 @@ Route::post('/komplainkomentar', 'App\Http\Controllers\KomplainKomentarControlle
 Route::get('/pertanyaanrating', 'App\Http\Controllers\PertanyaanRatingController@index');
 Route::get('/pertanyaanrating/create', 'App\Http\Controllers\PertanyaanRatingController@create');
 Route::post('/pertanyaanrating', 'App\Http\Controllers\PertanyaanRatingController@store');
-
+});
 

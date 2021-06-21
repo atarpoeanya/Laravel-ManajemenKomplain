@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@if(checkPermission(['admin']))
 @section('content')
 <div class="container">
     <table class="table">
@@ -37,3 +37,4 @@
     <a href="/komplain/create" class="btn btn-secondary">Insert</a>
 </div>
 @endsection
+@endif
