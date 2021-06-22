@@ -10,8 +10,8 @@
                 <th scope="col">id_user</th>
                 <th scope="col">id_kategori</th>
                 <th scope="col">komplain</th>
-                <th scope="col">path_bukti</th>
-                <th scope="col">status_utama_komplain</th>
+                <th scope="col">Judul</th>
+                <th scope="col">Status komplain</th>
                 
             </tr>
         </thead>
@@ -24,8 +24,13 @@
                 <td>{{$value1->nama}}</td>
                 @endif
                 @endforeach
+                
                 <td>{{$value->id_user}}</td>
+
+                
+
                 <td>{{$value->id_kategori}}</td>
+
                 <td>{{$value->komplain}}</td>
                 <td>{{$value->path_bukti}}</td>
                 <td>{{$value->status_utama_komplain}}</td>                

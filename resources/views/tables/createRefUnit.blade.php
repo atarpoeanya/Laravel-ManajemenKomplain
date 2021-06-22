@@ -32,11 +32,6 @@
         <option value="0">Tidak Aktif</option>
     </select>
 
-    <input type="hidden" class="form-control @error('created_at') is-invalid @enderror" 
-        id="created_at"  name="created_at" value="{{Auth::user()->name}}" readonly>
-    
-    <input type="hidden" class="form-control @error('updated_at') is-invalid @enderror" 
-        id="updated_at"  name="updated_at" value="{{Auth::user()->name}}" readonly>
 
     <input type="hidden" class="form-control @error('created_by') is-invalid @enderror" 
         id="created_by"  name="created_by" value="{{Auth::user()->name}}" readonly>

@@ -34,10 +34,10 @@ Route::group(['middleware'=>'check-permission:user'], function () {
 	// Route::get('permissions-superadmin',['middleware'=>'check-permission:superadmin','uses'=>'HomeController@superadmin']);
 });
 // ====== tables ======
-
+// Auth::routes();
 Route::group(['middleware'=>'check-permission:admin'], function (){
     // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/home', 'App\Http\Controllers\Admin\AdminDashboardController@index');
+    Route::get('/home', 'App\Http\Controllers\Admin\AdminDashboardController@index')->middleware('auth');
    
     // Route::get('permissions-admin-superadmin',['middleware'=>'check-permission:admin','uses'=>'HomeController@admin']);
     // Route::get('admin', function () { return view('home'); })->middleware(['checkRole:admin']);
@@ -71,7 +71,7 @@ Route::post('/komplain', 'App\Http\Controllers\KomplainController@store');
 //komplain komentar
 Route::get('/komplainkomentar', 'App\Http\Controllers\KomplainKomentarController@index');
 Route::get('/komplainkomentar/create', 'App\Http\Controllers\KomplainKomentarController@create');
-Route::post('/komplainkomentar', 'App\Http\Controllers\KomplainKomentarController@store');
+Route::post('/home', 'App\Http\Controllers\KomplainKomentarController@store');
 
 //pertanyaan rating
 Route::get('/pertanyaanrating', 'App\Http\Controllers\PertanyaanRatingController@index');
