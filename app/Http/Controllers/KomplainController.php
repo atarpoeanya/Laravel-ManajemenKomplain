@@ -25,7 +25,7 @@ class KomplainController extends Controller
         $kategori = kategori::all();
         $komplain = komplain::all();
         
-        return view('tables.komplain', compact('refunit', 'reflayanan', 'layananunit','kategori','komplain'));
+        return view('tables.home', compact('refunit', 'reflayanan', 'layananunit','kategori','komplain'));
     }
 
     /**

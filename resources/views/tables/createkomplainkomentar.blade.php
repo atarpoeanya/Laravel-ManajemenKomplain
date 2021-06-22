@@ -4,26 +4,20 @@
 <form action="/komplainkomentar" method="POST">
     @csrf
 
-    <label for="id_komplain">Id Komplain</label>
-    <select class="form-control @error('id_unit_parent') is-invalid @enderror" name="id_komplain" id="id_komplain"> 
+    <label for="id_judul">Judul</label>
+    <select class="form-control @error('path_bukti') is-invalid @enderror" name="id_judl" id="id_judul"> 
     @foreach($komplain as $value)
-        <option value="{{$value->id}}"> {{$value->nama}} </option>
+        <option value="{{$value->id}}"> {{$value->path_bukti}} </option>
     @endforeach
     </select>
 
-    <label for="id_user_form">Id User Form</label>
-    <select class="form-control @error('id_unit_parent') is-invalid @enderror" name="id_user_form" id="id_user_form"> 
-    @foreach($errors as $value)
-        <option value="{{$value->id}}"> {{$value->nama}} </option>
+    <label for="id_user_form">Pengguna</label>
+    <select class="form-control @error('id_user') is-invalid @enderror" name="id_user_form" id="id_user_form"> 
+    @foreach($komplain as $value)
+        <option value="{{$value->id_user}}"> {{$value->id_user}} </option>
     @endforeach
     </select>
 
-    <label for="id_user_to">Id User to</label>
-    <select class="form-control @error('id_unit_parent') is-invalid @enderror" name="id_user_to" id="id_user_to"> 
-    @foreach($errors as $value)
-        <option value="{{$value->id}}"> {{$value->nama}} </option>
-    @endforeach
-    </select>
 
     <label for="is_active">Status komplain</label>
     <select class="form-control @error('is_active') is-invalid @enderror" name="is_active" id="is_active" >

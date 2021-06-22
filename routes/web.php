@@ -36,7 +36,8 @@ Route::group(['middleware'=>'check-permission:user'], function () {
 // ====== tables ======
 
 Route::group(['middleware'=>'check-permission:admin'], function (){
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', 'App\Http\Controllers\Admin\AdminDashboardController@index');
    
     // Route::get('permissions-admin-superadmin',['middleware'=>'check-permission:admin','uses'=>'HomeController@admin']);
     // Route::get('admin', function () { return view('home'); })->middleware(['checkRole:admin']);
@@ -63,7 +64,7 @@ Route::get('/kategori/create', 'App\Http\Controllers\KategoriController@create')
 Route::post('/kategori', 'App\Http\Controllers\KategoriController@store');
 
 //komplain
-Route::get('komplain', 'App\Http\Controllers\KomplainController@index');
+Route::get('/komplain', 'App\Http\Controllers\KomplainController@index');
 Route::get('/komplain/create', 'App\Http\Controllers\KomplainController@create');
 Route::post('/komplain', 'App\Http\Controllers\KomplainController@store');
 
