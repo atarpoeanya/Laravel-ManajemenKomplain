@@ -23,9 +23,19 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm ">
             <div class="container">
+            @if(checkPermission(['user']))
+                <a class="navbar-brand" href="{{ url('/user') }}">
+                    {{ config('Manajemen Komplain', 'Manajemen Komplain') }}
+                </a>
+            @elseif(checkPermission(['admin']))
                 <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ config('Manajemen Komplain', 'Manajemen Komplain') }}
                 </a>
+                @else
+                <a class="navbar-brand" href="{{ url('/welcome') }}">
+                    {{ config('Manajemen Komplain', 'Manajemen Komplain') }}
+                </a>
+            @endif
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -38,8 +48,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <a class="nav-link" href="{{ url('/user') }}">User</a>
-                        <a class="nav-link" href="{{ url('/komplain') }}">Admin</a>
+                        
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))

@@ -8,6 +8,7 @@ use App\Models\refLayanan;
 use App\Models\kategori;
 use App\Models\komplain;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class KomplainController extends Controller
 {
@@ -23,6 +24,7 @@ class KomplainController extends Controller
         $layananunit = layananUnit::all();
         $kategori = kategori::all();
         $komplain = komplain::all();
+        
         return view('tables.komplain', compact('refunit', 'reflayanan', 'layananunit','kategori','komplain'));
     }
 
@@ -33,12 +35,12 @@ class KomplainController extends Controller
      */
     public function create()
     {
-        $refunit = refUnit::all();
         $reflayanan = refLayanan::all();
         $layananunit = layananUnit::all();
         $kategori = kategori::all();
         $komplain = komplain::all();
-        return view('tables.createkomplain', compact('refunit', 'reflayanan', 'layananunit','kategori','komplain'));
+        
+        return view('user.formKomplain', compact('layananunit','kategori','komplain','reflayanan'));
     }
 
     /**
@@ -49,9 +51,9 @@ class KomplainController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['id_layanan'=>'required', 'id_user'=>'required', 'id_kategori'=>'required', 'komplain'=>'required', 'path_bukti'=>'required', 'status_utama_komplain'=>'required']);
+        $request->validate(['id_layanan'=>'required', 'id_user'=>'required', 'id_kategori'=>'required', 'komplain'=>'required', 'path_bukti'=>'required', 'status_utama_komplain'=>'required','created_by'=>'required']);
         komplain::create($request->all());
-        return redirect('/komplain')->with('status','Masuk');
+        return redirect('user')->with('status','Masuk');
     }
 
     /**

@@ -7,6 +7,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 
+
+
 class HomeController extends Controller
 {
     /**
@@ -38,19 +40,9 @@ class HomeController extends Controller
      */
     public function allUsers()
     {
-        dd('Access All Users');
+        return view('user');
     }
 
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function adminSuperadmin()
-    {
-        return view ('/kategori');
-    }
 
 
     /**

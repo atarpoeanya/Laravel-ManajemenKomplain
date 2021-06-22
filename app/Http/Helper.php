@@ -2,6 +2,7 @@
 
 
   function checkPermission($permissions){
+    if(auth()->user()) {
     $userAccess = getMyPermission(auth()->user()->role);
     foreach ($permissions as $key => $value) {
       if($value == $userAccess){
@@ -9,6 +10,9 @@
       }
     }
     return false;
+    }
+    else
+    return 1;
   }
 
 

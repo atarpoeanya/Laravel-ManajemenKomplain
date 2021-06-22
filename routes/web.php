@@ -19,20 +19,24 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('dasboard', 'UserController@dashboard')->middleware('auth');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 // Route::get('/home', 'HomeController@index');
 
 
 
 
-Route::group(['middleware'=>'auth'], function () {
-	Route::get('permissions-all-users',['middleware'=>'check-permission:user','uses'=>'HomeController@allUsers']);
+Route::group(['middleware'=>'check-permission:user'], function () {
+    Route::get('/user', 'App\Http\Controllers\User\DashboardController@index');
+    Route::get('formKomplain', 'App\Http\Controllers\KomplainController@create');
+    Route::post('/user', 'App\Http\Controllers\KomplainController@store');
 	
-	Route::get('permissions-superadmin',['middleware'=>'check-permission:superadmin','uses'=>'HomeController@superadmin']);
+	
+	// Route::get('permissions-superadmin',['middleware'=>'check-permission:superadmin','uses'=>'HomeController@superadmin']);
 });
 // ====== tables ======
 
 Route::group(['middleware'=>'check-permission:admin'], function (){
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
    
     // Route::get('permissions-admin-superadmin',['middleware'=>'check-permission:admin','uses'=>'HomeController@admin']);
     // Route::get('admin', function () { return view('home'); })->middleware(['checkRole:admin']);
