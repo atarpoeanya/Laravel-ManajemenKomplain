@@ -36,12 +36,10 @@ Route::group(['middleware'=>'check-permission:user'], function () {
 // ====== tables ======
 // Auth::routes();
 Route::group(['middleware'=>'check-permission:admin'], function (){
-    // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/home', 'App\Http\Controllers\Admin\AdminDashboardController@index')->middleware('auth');
+    
+Route::get('/home', 'App\Http\Controllers\Admin\AdminDashboardController@index')->middleware('auth');
+Route::get('/table', [App\Http\Controllers\HomeController::class, 'index'])->name('table');
    
-    // Route::get('permissions-admin-superadmin',['middleware'=>'check-permission:admin','uses'=>'HomeController@admin']);
-    // Route::get('admin', function () { return view('home'); })->middleware(['checkRole:admin']);
-    // Route::get('user', function () { return view('user'); })->middleware(['checkRole:user']);
 
 //ref_layanan
 Route::get('/layanan', 'App\Http\Controllers\refLayananController@index');
@@ -77,5 +75,46 @@ Route::post('/home', 'App\Http\Controllers\KomplainKomentarController@store');
 Route::get('/pertanyaanrating', 'App\Http\Controllers\PertanyaanRatingController@index');
 Route::get('/pertanyaanrating/create', 'App\Http\Controllers\PertanyaanRatingController@create');
 Route::post('/pertanyaanrating', 'App\Http\Controllers\PertanyaanRatingController@store');
+
+//jawabanrating
+Route::get('/jawabanrating', 'App\Http\Controllers\JawabanRatingController@index');
+Route::get('/jawabanrating/create', 'App\Http\Controllers\JawabanRatingController@create');
+Route::post('/jawabanrating', 'App\Http\Controllers\JawabanRatingController@store');
+
+//kontak
+Route::get('/kontak', 'App\Http\Controllers\KontakController@index');
+Route::get('/kontak/create', 'App\Http\Controllers\KontakController@create');
+Route::post('/kontak', 'App\Http\Controllers\KontakController@store');
+
+//refjeniskontak
+Route::get('/jeniskontak', 'App\Http\Controllers\refJenisKontakController@index');
+Route::get('/jeniskontak/create', 'App\Http\Controllers\refJenisKontakController@create');
+Route::post('/jeniskontak', 'App\Http\Controllers\refJenisKontakController@store');
+
+//group
+Route::get('/group', 'App\Http\Controllers\GroupController@index');
+Route::get('/group/create', 'App\Http\Controllers\GroupController@create');
+Route::post('/group', 'App\Http\Controllers\GroupController@store');
+
+//groupmember
+Route::get('/groupmember', 'App\Http\Controllers\GroupMemberController@index');
+Route::get('/groupmember/create', 'App\Http\Controllers\GroupMemberController@create');
+Route::post('/groupmember', 'App\Http\Controllers\GroupMemberController@store');
+
+//broadcast
+Route::get('/broadcast', 'App\Http\Controllers\BroadcastController@index');
+Route::get('/broadcast/create', 'App\Http\Controllers\BroadcastMemberController@create');
+Route::post('/broadcast', 'App\Http\Controllers\BroadcastMemberController@store');
+
+//broadcast
+Route::get('/broadcast', 'App\Http\Controllers\BroadcastController@index');
+Route::get('/broadcast/create', 'App\Http\Controllers\BroadcastMemberController@create');
+Route::post('/broadcast', 'App\Http\Controllers\BroadcastMemberController@store');
+
+/*user
+Route::get('/user', 'App\Http\Controllers\UserController@index');
+Route::get('/user/create', 'App\Http\Controllers\UserController@create');
+Route::post('/user', 'App\Http\Controllers\UserController@store');
+*/
 });
 

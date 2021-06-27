@@ -34,7 +34,7 @@
     
     <div class="jumbotron">
     
-  <h1 class="display-4">Hello, world!</h1>
+  <h1 class="display-4">Complain Management System</h1>
   <p class="lead">Selamat datang pada sistem pengaduan kami.</p>
   <hr class="my-4">
   <p>Kepuasan anda adalah yang paling utama untuk kami.</p>
